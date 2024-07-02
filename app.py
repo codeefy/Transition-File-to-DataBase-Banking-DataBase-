@@ -112,18 +112,18 @@ def main(): #main method to run the program
             type = input("Enter A/C type : ") #taking the input from the user for the record to be added to the table 
             balance = input("Enter initial deposit amount ") #taking the input from the user for the record to be added to the table
 
-            add_Account(account_no,name,address,phone_no,pan,type,balance)
+            add_Account(account_no,name,address,phone_no,pan,type,balance) #calling the method to add the record to the Account table 
             print('\nAccount added successfully')
 
-        elif choice == 2:
+        elif choice == 2: #if the choice is 2 then display the transaction history of an account holder
             account = input('Enter your account number : ')
-            display_Transaction_History(account)
+            display_Transaction_History(account) #calling the method to display the transaction history of an account holder
 
-        elif choice == 3:
+        elif choice == 3: #if the choice is 3 then make a fund transfer between two accounts
             debit_account = input('\nEnter your Account number : ')
             credit_account = input('\nEnter the Payee Account number : ')
             amount = input('\nEnter the amount to transfer : ')
-            begin_Transaction(credit_account, debit_account, amount)
+            begin_Transaction(credit_account, debit_account, amount) #calling the method to begin the transaction between two accounts
 
         else:
             print("\nIllegal input !!!")
