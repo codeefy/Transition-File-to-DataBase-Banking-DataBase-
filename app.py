@@ -105,8 +105,8 @@ def main(): #main method to run the program
 
         if choice == 1: #if the choice is 1 then add a record to the Account table 
             account_no = input("Enter Account number of the account holder : ") #taking the input from the user for the record to be added to the table
-            name = input("Enter Name of the account holder : ")
-            address = input("Enter Address of the account holder : ")
+            name = input("Enter Name of the account holder : ") #taking the input from the user for the record to be added to the table 
+            address = input("Enter Address of the account holder : ") #taking the input from the user for the record to be added to the table
             phone_no = input("Enter Phone_no of the account holder : ")
             pan = input("Enter PAN of the account holder : ")
             type = input("Enter A/C type : ")
