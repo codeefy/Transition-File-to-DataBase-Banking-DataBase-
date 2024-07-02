@@ -4,7 +4,7 @@
 import csv # Importing the csv module to read and write the csv files
 import os.path  # Importing the os module to check if the file is already present or not
 from os import path # Importing the path module to check if the file is already present or not
-import time
+import time # Importing the time module to calculate the time taken for the transaction
 
 # Schema of Student table
 col_name_Account = ['Account_no', 'Name', 'Address', 'Phone_no', 'PAN', 'A/C type', 'Balance'] # Schema of Account table in csv
