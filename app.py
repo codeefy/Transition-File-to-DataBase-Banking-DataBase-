@@ -129,9 +129,9 @@ def main(): #main method to run the program
             print("\nIllegal input !!!") #printing the error message if the input is wrong
 
         end = int(input("\nDo you want to continue ?, If Yes press 1 else press 0\n==>")) #asking the user if he wants to continue or not
-        if end != 0 and end != 1:
-            print("\nIllegal input !!!")
-            exit()
+        if end != 0 and end != 1: #checking if the input is wrong or not 
+            print("\nIllegal input !!!")  #printing the error message if the input is wrong
+            exit() #exiting the program if the input is wrong 
 
 
-main()
+main() #calling the main method to run the program 
