@@ -59,11 +59,11 @@ def begin_Transaction(credit_account, debit_account, amount): # Method to begin 
                 for r_record in f_reader2: #ITERATING THROUGH THE ACCOUNTS FILE TO CHECK FOR ACCOUNTS  AND BALANCE
                     if r_record["Account_no"] == credit_account: #CONDITION CHECK FOR ACCOUNT NUMBER MATCH FOR CREDIT ACCOUNT
 
-                        s_record["Balance"] = str(int(s_record["Balance"]) - int(amount)) #UPDATING THE BALANCE OF DEBIT ACCOUNT
+                        s_record["Balance"] = str(int(s_record["Balance"]) - int(amount)) #UPDATING THE BALANCE OF DEBIT ACCOUNT after transaction 
                         temp.append(s_record)
-                        f_writer.writerow({'Account1':s_record['Account_no'], 'Account2':r_record['Account_no'], 'Amount':amount, 'D/C':'D'})
-                        r_record["Balance"] = str(int(r_record["Balance"]) + int(amount))
-                        temp.append(r_record)
+                        f_writer.writerow({'Account1':s_record['Account_no'], 'Account2':r_record['Account_no'], 'Amount':amount, 'D/C':'D'}) #WRITING THE TRANSACTION RECORD TO LEDGER FILE  
+                        r_record["Balance"] = str(int(r_record["Balance"]) + int(amount)) #updating the balance of credit account after transaction
+                        temp.append(r_record) #appending the record to the temporary list 
                         f_writer.writerow({'Account1': r_record['Account_no'], 'Account2': s_record['Account_no'], 'Amount': amount,'D/C': 'C'})
                         success = success + 1
                         break
