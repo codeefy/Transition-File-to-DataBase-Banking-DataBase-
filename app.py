@@ -74,23 +74,23 @@ def begin_Transaction(credit_account, debit_account, amount): # Method to begin 
                 temp.append(record) #appending the record to the temporary list 
         # THE TRANSACTION OPERATIONS END HERE
     except:
-        print('\nWrong input entered !!!')
+        print('\nWrong input entered !!!') #printing the error message if the input is wrong  
 
-    f_obj_Account1.close()
-    f_obj_Account2.close()
-    f_obj_Ledger.close()
-    if success == 1:
-        f_obj_Account = open('Accounts.csv', 'w+', newline='')
-        f_writer = csv.DictWriter(f_obj_Account, fieldnames=col_name_Account)
-        f_writer.writeheader()
-        for data in temp:
-            f_writer.writerow(data)
-        f_obj_Account.close()
-        print("\nTransaction is successfull !!")
-    else:
-        print('\nTransaction failed : Confirm Account details')
+    f_obj_Account1.close() #closing the file after reading the records from the file 
+    f_obj_Account2.close() #closing the file after reading the records from the file
+    f_obj_Ledger.close() #closing the file after writing the records to the file
+    if success == 1: #checking if the transaction is successful or not  
+        f_obj_Account = open('Accounts.csv', 'w+', newline='') #opening the file in write mode because we need to write the records to the file
+        f_writer = csv.DictWriter(f_obj_Account, fieldnames=col_name_Account) #writing the schema to the file and dictwriter is used to write the data in dictionary format
+        f_writer.writeheader() #writing the header to the file 
+        for data in temp: #iterating through the records in the temporary list 
+            f_writer.writerow(data) #writing the record to the file 
+        f_obj_Account.close() #closing the file after writing the records to the file
+        print("\nTransaction is successfull !!") #printing the success message if the transaction is successful
+    else: #if the transaction is not successful 
+        print('\nTransaction failed : Confirm Account details') #printing the error message if the transaction is not successful
 
-    t1 = time.time()
+    t1 = time.time() #ending the timer to calculate the time taken for the transaction
     print('\nTime Elapsed :  ', (t1-t0)*1000, 'millisec')
 
 
