@@ -1,8 +1,8 @@
 # Module 1 content
 # Transition from files to DBMS
 
-import csv
-import os.path
+import csv # Importing the csv module to read and write the csv files
+import os.path 
 from os import path
 import time
 
