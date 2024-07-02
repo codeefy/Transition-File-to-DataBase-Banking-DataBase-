@@ -9,6 +9,7 @@ import time # Importing the time module to calculate the time taken for the tran
 # Schema of Student table
 col_name_Account = ['Account_no', 'Name', 'Address', 'Phone_no', 'PAN', 'A/C type', 'Balance'] # Schema of Account table in csv
 col_name_Ledger = ['Account1', 'Account2', 'Amount', 'D/C'] # Schema of Ledger table in csv format  
+# ledger table is 
 if path.exists('.\\Accounts.csv') == False and path.exists('.\\Ledger.csv') == False: # Checking if the files are already present or not 
     f_ob = open('Accounts.csv', 'a+') # Creating a new file for Account table if not present  
     f_wr = csv.DictWriter(f_ob, fieldnames=col_name_Account)  # Writing the schema to the file
