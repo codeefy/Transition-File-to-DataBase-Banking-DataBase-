@@ -65,13 +65,13 @@ def begin_Transaction(credit_account, debit_account, amount): # Method to begin 
                         r_record["Balance"] = str(int(r_record["Balance"]) + int(amount)) #updating the balance of credit account after transaction
                         temp.append(r_record) #appending the record to the temporary list 
                         f_writer.writerow({'Account1': r_record['Account_no'], 'Account2': s_record['Account_no'], 'Amount': amount,'D/C': 'C'})
-                        success = success + 1
-                        break
-        f_obj_Account1.seek(0)
-        next(f_obj_Account1)
-        for record in f_reader1:
-            if record['Account_no'] != temp[0]['Account_no'] and record['Account_no'] != temp[1]['Account_no']:
-                temp.append(record)
+                        success = success + 1 #incrementing the success variable to indicate the success of the transaction 
+                        break #breaking the loop if the record is found  
+        f_obj_Account1.seek(0) #setting the file pointer to the beginning of the file 
+        next(f_obj_Account1) #skipping the header of the file 
+        for record in f_reader1: #iterating through the records in the file   
+            if record['Account_no'] != temp[0]['Account_no'] and record['Account_no'] != temp[1]['Account_no']: #checking if the record is not the one which is updated
+                temp.append(record) #appending the record to the temporary list 
         # THE TRANSACTION OPERATIONS END HERE
     except:
         print('\nWrong input entered !!!')
