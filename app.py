@@ -91,17 +91,17 @@ def begin_Transaction(credit_account, debit_account, amount): # Method to begin 
         print('\nTransaction failed : Confirm Account details') #printing the error message if the transaction is not successful
 
     t1 = time.time() #ending the timer to calculate the time taken for the transaction
-    print('\nTime Elapsed :  ', (t1-t0)*1000, 'millisec')
+    print('\nTime Elapsed :  ', (t1-t0)*1000, 'millisec') #printing the time taken for the transaction in milliseconds
 
 
-def main():
-    end = 1
-    print("===================================================================================")
-    print("\nSchema of Accounts table :\n", col_name_Account)
-    while end == 1:
-        choice = int(input("\nFor adding a record to Account table Press 1\n" +
+def main(): #main method to run the program  
+    end = 1 #variable to check if the user wants to continue or not 
+    print("===================================================================================") #printing the header of the program  
+    print("\nSchema of Accounts table :\n", col_name_Account) #printing the schema of the Account table
+    while end == 1: #checking if the user wants to continue or not
+        choice = int(input("\nFor adding a record to Account table Press 1\n" + 
                            "For displaying all Transaction details Press 2\n" +
-                           "For making a Fund Transfer Press 3\n"))
+                           "For making a Fund Transfer Press 3\n")) #taking the choice from the user to perform the operation 1 for  adding a record, 2 for displaying the transaction history, 3 for making a fund transfer
 
         if choice == 1:
             account_no = input("Enter Account number of the account holder : ")
