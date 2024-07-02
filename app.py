@@ -34,23 +34,23 @@ def display_Transaction_History(account_no): # Method to display the transaction
     f_reader = csv.DictReader(f_obj) # Reading the file in dictionary format  
     print("\n") # Printing a new line   
     for record in f_reader: # Iterating through the records in the file  
-        if record['Account1'] == account_no or record['Account1'] == account_no:
+        if record['Account1'] == account_no or record['Account1'] == account_no: # Checking if the account number is present in the record  and printing the record if present
             print(record)
     f_obj.close()
 
 
-def begin_Transaction(credit_account, debit_account, amount):
-    t0=time.time()
-    temp = []
-    success = 0
+def begin_Transaction(credit_account, debit_account, amount): # Method to begin the transaction between two accounts  and updating the records in the Account table
+    t0=time.time() # Starting the timer to calculate the time taken for the transaction 
+    temp = [] # Temporary list to store the records of the Account table
+    success = 0 # Variable to check if the transaction is successful or not
 
     # OPENING FILES TO STORE TRANSACTION DATA
-    f_obj_Account1 = open('Accounts.csv', 'r')
-    f_reader1 = csv.DictReader(f_obj_Account1)
-    f_obj_Account2 = open('Accounts.csv', 'r')
-    f_reader2 = csv.DictReader(f_obj_Account2)
-    f_obj_Ledger = open('Ledger.csv', 'a+')
-    f_writer = csv.DictWriter(f_obj_Ledger, fieldnames=col_name_Ledger)
+    f_obj_Account1 = open('Accounts.csv', 'r') # Opening the file in read mode because we need to read the records from the file
+    f_reader1 = csv.DictReader(f_obj_Account1) # Reading the file in dictionary format 
+    f_obj_Account2 = open('Accounts.csv', 'r') # Opening the file in read mode because we need to read the records from the file
+    f_reader2 = csv.DictReader(f_obj_Account2) # Reading the file in dictionary format
+    f_obj_Ledger = open('Ledger.csv', 'a+') # Opening the file in append mode because we need to add a record to the table
+    f_writer = csv.DictWriter(f_obj_Ledger, fieldnames=col_name_Ledger) # Writing the schema to the file and dictwriter is used to write the data in dictionary format
     try:
         #THE TRANSACTION OPERATIONS BEGINS HERE :
 
