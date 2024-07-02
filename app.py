@@ -103,8 +103,8 @@ def main(): #main method to run the program
                            "For displaying all Transaction details Press 2\n" +
                            "For making a Fund Transfer Press 3\n")) #taking the choice from the user to perform the operation 1 for  adding a record, 2 for displaying the transaction history, 3 for making a fund transfer
 
-        if choice == 1:
-            account_no = input("Enter Account number of the account holder : ")
+        if choice == 1: #if the choice is 1 then add a record to the Account table 
+            account_no = input("Enter Account number of the account holder : ") #taking the input from the user for the record to be added to the table
             name = input("Enter Name of the account holder : ")
             address = input("Enter Address of the account holder : ")
             phone_no = input("Enter Phone_no of the account holder : ")
