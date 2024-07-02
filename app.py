@@ -20,7 +20,7 @@ if path.exists('.\\Accounts.csv') == False and path.exists('.\\Ledger.csv') == F
     f_ob.close() # Closing the file     
 
 
-# utility methods
+# utility methods for the operations on the tables 
 def add_Account(account_no, name, address, phone_no, pan, type, balance):
     f_obj = open('Accounts.csv', 'a+')
     f_writer = csv.DictWriter(f_obj, fieldnames=col_name_Account)
