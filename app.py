@@ -21,8 +21,8 @@ if path.exists('.\\Accounts.csv') == False and path.exists('.\\Ledger.csv') == F
 
 
 # utility methods for the operations on the tables 
-def add_Account(account_no, name, address, phone_no, pan, type, balance):
-    f_obj = open('Accounts.csv', 'a+')
+def add_Account(account_no, name, address, phone_no, pan, type, balance): # Method to add a record to the Account table  
+    f_obj = open('Accounts.csv', 'a+') # Opening the file in append mode because we need to add a record to the table
     f_writer = csv.DictWriter(f_obj, fieldnames=col_name_Account)
     f_writer.writerow({'Account_no':account_no, 'Name': name, 'Address': address, 'Phone_no': phone_no,
                        'PAN': pan, 'A/C type':type, 'Balance':balance})
