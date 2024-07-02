@@ -54,12 +54,12 @@ def begin_Transaction(credit_account, debit_account, amount): # Method to begin 
     try:
         #THE TRANSACTION OPERATIONS BEGINS HERE :
 
-        for s_record in f_reader1:
+        for s_record in f_reader1: #ITERATING THROUGH THE ACCOUNTS FILE TO CHECK FOR ACCOUNTS  AND BALANCE 
             if s_record["Account_no"] == debit_account and int(s_record["Balance"]) > int(amount):  #CONDITION CHECK FOR ENOUGH BALANCE
-                for r_record in f_reader2:
-                    if r_record["Account_no"] == credit_account:
+                for r_record in f_reader2: #ITERATING THROUGH THE ACCOUNTS FILE TO CHECK FOR ACCOUNTS  AND BALANCE
+                    if r_record["Account_no"] == credit_account: #CONDITION CHECK FOR ACCOUNT NUMBER MATCH FOR CREDIT ACCOUNT
 
-                        s_record["Balance"] = str(int(s_record["Balance"]) - int(amount))
+                        s_record["Balance"] = str(int(s_record["Balance"]) - int(amount)) #UPDATING THE BALANCE OF DEBIT ACCOUNT
                         temp.append(s_record)
                         f_writer.writerow({'Account1':s_record['Account_no'], 'Account2':r_record['Account_no'], 'Amount':amount, 'D/C':'D'})
                         r_record["Balance"] = str(int(r_record["Balance"]) + int(amount))
