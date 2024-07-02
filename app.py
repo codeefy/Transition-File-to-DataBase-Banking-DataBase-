@@ -3,7 +3,7 @@
 
 import csv # Importing the csv module to read and write the csv files
 import os.path  # Importing the os module to check if the file is already present or not
-from os import path
+from os import path # Importing the path module to check if the file is already present or not
 import time
 
 # Schema of Student table
