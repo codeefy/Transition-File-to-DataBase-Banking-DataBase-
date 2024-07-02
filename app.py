@@ -125,10 +125,10 @@ def main(): #main method to run the program
             amount = input('\nEnter the amount to transfer : ')
             begin_Transaction(credit_account, debit_account, amount) #calling the method to begin the transaction between two accounts
 
-        else:
-            print("\nIllegal input !!!")
+        else: #if the input is wrong then print the error message 
+            print("\nIllegal input !!!") #printing the error message if the input is wrong
 
-        end = int(input("\nDo you want to continue ?, If Yes press 1 else press 0\n==>"))
+        end = int(input("\nDo you want to continue ?, If Yes press 1 else press 0\n==>")) #asking the user if he wants to continue or not
         if end != 0 and end != 1:
             print("\nIllegal input !!!")
             exit()
