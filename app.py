@@ -2,7 +2,7 @@
 # Transition from files to DBMS
 
 import csv # Importing the csv module to read and write the csv files
-import os.path 
+import os.path  # Importing the os module to check if the file is already present or not
 from os import path
 import time
 
