@@ -10,13 +10,13 @@ import time
 col_name_Account = ['Account_no', 'Name', 'Address', 'Phone_no', 'PAN', 'A/C type', 'Balance'] # Schema of Account table in csv
 col_name_Ledger = ['Account1', 'Account2', 'Amount', 'D/C'] # Schema of Ledger table in csv format  
 if path.exists('.\\Accounts.csv') == False and path.exists('.\\Ledger.csv') == False: # Checking if the files are already present or not 
-    f_ob = open('Accounts.csv', 'a+') # Creating a new file for Account table if not present
+    f_ob = open('Accounts.csv', 'a+') # Creating a new file for Account table if not present  
     f_wr = csv.DictWriter(f_ob, fieldnames=col_name_Account)  # Writing the schema to the file
-    f_wr.writeheader()
-    f_ob.close()
-    f_ob = open('Ledger.csv', 'a+')
-    f_wr = csv.DictWriter(f_ob, fieldnames=col_name_Ledger)
-    f_wr.writeheader()
+    f_wr.writeheader() # Writing the header to the file  
+    f_ob.close() # Closing the file  
+    f_ob = open('Ledger.csv', 'a+') # Creating a new file for Ledger table if not present   
+    f_wr = csv.DictWriter(f_ob, fieldnames=col_name_Ledger) # Writing the schema to the file 
+    f_wr.writeheader() # Writing the header to the file
     f_ob.close()
 
 
