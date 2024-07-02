@@ -29,8 +29,8 @@ def add_Account(account_no, name, address, phone_no, pan, type, balance): # Meth
     f_obj.close() # Closing the file after writing the record to the file 
 
 
-def display_Transaction_History(account_no):
-    f_obj = open('Ledger.csv', 'r')
+def display_Transaction_History(account_no): # Method to display the transaction history of an account holder 
+    f_obj = open('Ledger.csv', 'r') # Opening the file in read mode because we need to read the records from the file
     f_reader = csv.DictReader(f_obj)
     print("\n")
     for record in f_reader:
