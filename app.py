@@ -109,8 +109,8 @@ def main(): #main method to run the program
             address = input("Enter Address of the account holder : ") #taking the input from the user for the record to be added to the table
             phone_no = input("Enter Phone_no of the account holder : ") #taking the input from the user for the record to be added to the table
             pan = input("Enter PAN of the account holder : ") #taking the input from the user for the record to be added to the table
-            type = input("Enter A/C type : ")
-            balance = input("Enter initial deposit amount ")
+            type = input("Enter A/C type : ") #taking the input from the user for the record to be added to the table 
+            balance = input("Enter initial deposit amount ") #taking the input from the user for the record to be added to the table
 
             add_Account(account_no,name,address,phone_no,pan,type,balance)
             print('\nAccount added successfully')
