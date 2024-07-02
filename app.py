@@ -17,7 +17,7 @@ if path.exists('.\\Accounts.csv') == False and path.exists('.\\Ledger.csv') == F
     f_ob = open('Ledger.csv', 'a+') # Creating a new file for Ledger table if not present   
     f_wr = csv.DictWriter(f_ob, fieldnames=col_name_Ledger) # Writing the schema to the file 
     f_wr.writeheader() # Writing the header to the file
-    f_ob.close()
+    f_ob.close() # Closing the file     
 
 
 # utility methods
